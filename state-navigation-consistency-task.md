@@ -7,7 +7,7 @@
 - **Domain**: https://www.cortexai.trade/
 - **Logo**: cortex-logo.png
 - **Primary Color**: #FFFFFF (white)
-- **Accent Color**: #c6f91f (lime green - keeping for contrast)
+- **Accent Color**: #ffffff (lime green - keeping for contrast)
 
 ## Contact
 - Email: contact@cortexagent.xyz
