@@ -137,12 +137,15 @@ scrollbar-width: none;
 
           <!-- Force Unicorn canvas to fill + scale so it won't look like a fixed square -->
           <style>
-            .us-canvas canvas {
+            .us-canvas canvas,
+            [data-us-project] canvas,
+            [data-us-project] {
               width: 100% !important;
               height: 100% !important;
               display: block;
               transform: scale(1.2) translateX(8%);
               transform-origin: right center;
+              filter: grayscale(1) brightness(2) contrast(0.8) !important;
             }
           </style>
 
@@ -1608,9 +1611,9 @@ scrollbar-width: none;
 
           <div class="relative z-10 px-6 py-16 md:px-12 md:py-20 flex flex-col justify-between min-h-[400px]">
             <!-- Large Email Header -->
-            <a href="mailto:hello@cortex.finance" class="group flex items-start justify-between w-full mb-24 md:mb-32 reveal-on-scroll">
-              <span class="text-4xl sm:text-6xl md:text-8xl lg:text-[8rem] leading-none font-semibold tracking-tighter break-all reveal-on-scroll">
-                HELLO@CORTEX.FI
+            <a href="mailto:contact@cortexagent.xyz" class="group flex items-start justify-between w-full mb-24 md:mb-32 reveal-on-scroll">
+              <span class="text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] leading-none font-semibold tracking-tighter break-all reveal-on-scroll">
+                CONTACT@CORTEXAGENT.XYZ
               </span>
               <div class="pt-2 md:pt-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 md:w-20 md:h-20 transform group-hover:-translate-y-2 group-hover:translate-x-2 transition-transform duration-300">
@@ -1624,9 +1627,9 @@ scrollbar-width: none;
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 md:text-base leading-relaxed z-20 text-sm font-medium relative gap-x-12 gap-y-12">
               <!-- Col 1: Contact -->
               <div class="flex flex-col gap-x-4 gap-y-4">
-                <p class="font-semibold reveal-on-scroll">Built on Solana</p>
+                <p class="font-semibold reveal-on-scroll">Cortex Agent</p>
                 <p class="max-w-[200px] text-black/80 reveal-on-scroll">
-                  Decentralized yield optimization powered by neural networks.
+                  Autonomous DeFi Execution on Solana.
                 </p>
               </div>
 
@@ -1640,7 +1643,7 @@ scrollbar-width: none;
                     Platform
                   </a>
                   <a href="/pricing" class="hover:text-black/60 transition-colors reveal-on-scroll">
-                    Vaults
+                    Pricing
                   </a>
                   <a href="/docs" class="hover:text-black/60 transition-colors reveal-on-scroll">
                     Documentation
@@ -1669,13 +1672,10 @@ scrollbar-width: none;
                   Connect
                 </span>
                 <div class="flex flex-col gap-2">
-                  <a href="#" class="hover:text-black/60 transition-colors reveal-on-scroll">
+                  <a href="https://twitter.com/cortexagent" target="_blank" class="hover:text-black/60 transition-colors reveal-on-scroll">
                     X (Twitter)
                   </a>
-                  <a href="#" class="hover:text-black/60 transition-colors reveal-on-scroll">
-                    Discord
-                  </a>
-                  <a href="#" class="hover:text-black/60 transition-colors reveal-on-scroll">
+                  <a href="https://github.com/cortextradeagent" target="_blank" class="hover:text-black/60 transition-colors reveal-on-scroll">
                     GitHub
                   </a>
                 </div>
