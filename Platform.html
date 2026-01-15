@@ -34,44 +34,63 @@ animation: flow 2s linear infinite;
     
     <!-- Navigation -->
     <header class="border-dashed sticky z-50 bg-[#000000] w-full top-0 backdrop-blur-md">
-  <div class="grid grid-cols-12 h-16 sm:h-20">
-    <!-- Left Links -->
-    <div class="col-span-4 hidden md:flex items-center">
-      <a href="Platform.html" class="flex items-center justify-center border border-dashed border-white/20 text-white hover:bg-[#ffffff]/20 transition-colors text-xs font-medium tracking-wide font-geist bg-[#ffffff]/10 h-full pr-8 pl-8">
-  PLATFORM
-</a>
-      <a href="Solution.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">
-        SOLUTIONS
-      </a>
-      <a href="Pricing.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">PRICING</a>
-    </div>
-
-    <!-- Mobile Menu Trigger -->
-    <div class="col-span-2 md:hidden flex items-center pl-6 border-r border-dashed border-white/10">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu w-6 h-6 text-white"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
-    </div>
-
-    <!-- Logo Center -->
-    <div class="col-span-8 md:col-span-4 flex relative items-center justify-center">
-      <a href="Home.html" class="inline-flex items-center justify-center gap-2">
-        <img src="cortex-logo.png" alt="Cortex Agent" class="h-10 w-auto">
-        <span class="text-white font-geist font-semibold text-lg tracking-tight hidden sm:inline">CORTEX</span>
-      </a>
-    </div>
-
-    <!-- Right Links -->
-    <div class="col-span-2 md:col-span-4 flex items-center justify-end">
-      <a href="Docs.html" class="hidden md:flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r border-l pr-8 pl-8">DOCS</a><a href="Entreprise.html" class="hidden md:flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r border-l pr-8 pl-8">
-        ENTERPRISE
-      </a>
-      <a href="Login.html" class="md:w-auto flex items-center justify-center hover:text-[#ffffff] transition-colors gap-2 text-xs font-medium text-white tracking-wide font-geist w-full h-full pr-8 pl-8">
-        LOGIN
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-      </a>
-    </div>
-  </div>
-  <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-</header>
+      <div class="grid grid-cols-12 h-16 sm:h-20">
+        <div class="col-span-3 md:hidden flex items-center pl-4 border-r border-dashed border-white/10">
+          <button id="mobile-menu-btn" class="p-2 hover:bg-white/10 rounded-md transition-colors" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+          </button>
+        </div>
+        <div class="col-span-4 hidden md:flex items-center">
+          <a href="Platform.html" class="flex items-center justify-center border border-dashed border-white/20 text-white hover:bg-[#ffffff]/20 transition-colors text-xs font-medium tracking-wide font-geist bg-[#ffffff]/10 h-full pr-8 pl-8">PLATFORM</a>
+          <a href="Solution.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">SOLUTIONS</a>
+          <a href="Pricing.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">PRICING</a>
+        </div>
+        <div class="col-span-6 md:col-span-4 flex relative items-center justify-center">
+          <a href="Home.html" class="inline-flex items-center justify-center gap-2">
+            <img src="cortex-logo.png" alt="Cortex Agent" class="h-10 w-auto">
+            <span class="text-white font-geist font-semibold text-lg tracking-tight hidden sm:inline">CORTEX</span>
+          </a>
+        </div>
+        <div class="col-span-3 md:col-span-4 flex items-center justify-end">
+          <a href="Docs.html" class="hidden md:flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r border-l pr-8 pl-8">DOCS</a>
+          <a href="Entreprise.html" class="hidden md:flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r border-l pr-8 pl-8">ENTERPRISE</a>
+          <a href="Login.html" class="flex items-center justify-center hover:text-[#ffffff] transition-colors gap-2 text-xs font-medium text-white tracking-wide font-geist h-full pr-4 md:pr-8 pl-4 md:pl-8">
+            <span class="hidden sm:inline">LOGIN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    </header>
+    <div id="mobile-sidebar-overlay" class="fixed inset-0 bg-black/80 z-40 hidden md:hidden" onclick="closeMobileMenu()"></div>
+    <aside id="mobile-sidebar" class="fixed top-0 left-0 w-80 h-full bg-[#05080A] z-50 transform -translate-x-full transition-transform duration-300 md:hidden overflow-y-auto border-r border-white/10">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-8">
+          <span class="text-white font-semibold">Menu</span>
+          <button onclick="closeMobileMenu()" class="p-2 hover:bg-white/10 rounded-md transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <nav class="space-y-2">
+          <a href="Home.html" class="block px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-md transition-colors">Home</a>
+          <a href="Platform.html" class="block px-4 py-3 text-white bg-white/10 rounded-md">Platform</a>
+          <a href="Solution.html" class="block px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-md transition-colors">Solutions</a>
+          <a href="Pricing.html" class="block px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-md transition-colors">Pricing</a>
+          <a href="Docs.html" class="block px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-md transition-colors">Documentation</a>
+          <a href="Entreprise.html" class="block px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-md transition-colors">Enterprise</a>
+          <a href="Login.html" class="block px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-md transition-colors">Login</a>
+        </nav>
+      </div>
+    </aside>
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileSidebar = document.getElementById('mobile-sidebar');
+      const mobileOverlay = document.getElementById('mobile-sidebar-overlay');
+      function openMobileMenu() { mobileSidebar.classList.remove('-translate-x-full'); mobileOverlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobileSidebar.classList.add('-translate-x-full'); mobileOverlay.classList.add('hidden'); document.body.style.overflow = ''; }
+      window.closeMobileMenu = closeMobileMenu;
+      mobileMenuBtn.addEventListener('click', openMobileMenu);
+    </script>
 
     <!-- Main Content -->
     <main class="flex-grow flex flex-col">

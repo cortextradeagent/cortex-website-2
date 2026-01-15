@@ -45,26 +45,28 @@
     <!-- Standard Unified Header -->
     <header class="border-dashed sticky z-50 bg-[#000000] w-full top-0 backdrop-blur-md">
       <div class="grid grid-cols-12 h-16 sm:h-20">
-        <!-- Left Links -->
+        <!-- Mobile Menu Trigger (Left on mobile) -->
+        <div class="col-span-3 md:hidden flex items-center pl-4 border-r border-dashed border-white/10">
+          <button id="mobile-menu-btn" class="p-2 hover:bg-white/10 rounded-md transition-colors" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+          </button>
+        </div>
+
+        <!-- Left Links (Desktop only) -->
         <div class="col-span-4 hidden md:flex items-center">
           <a href="Platform.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 transition-colors border-dashed text-xs font-medium text-white tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">
             PLATFORM
           </a>
           <a href="Solution.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">
             SOLUTIONS
-          </a><a href="Pricing.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">PRICING</a>
-          
-        </div>
-
-        <!-- Mobile Menu Trigger -->
-        <div class="col-span-2 md:hidden flex items-center pl-6 border-r border-dashed border-white/10">
-          <button id="mobile-menu-btn" class="p-2 hover:bg-white/10 rounded-md transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
-          </button>
+          </a>
+          <a href="Pricing.html" class="flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r pr-8 pl-8">
+            PRICING
+          </a>
         </div>
 
         <!-- Logo Center -->
-        <div class="col-span-8 md:col-span-4 flex relative items-center justify-center">
+        <div class="col-span-6 md:col-span-4 flex relative items-center justify-center">
           <a href="Home.html" class="inline-flex items-center justify-center gap-2">
             <img src="cortex-logo.png" alt="Cortex Agent" class="h-10 w-auto">
             <span class="text-white font-geist font-semibold text-lg tracking-tight hidden sm:inline">CORTEX</span>
@@ -72,15 +74,16 @@
         </div>
 
         <!-- Right Links -->
-        <div class="col-span-2 md:col-span-4 flex items-center justify-end">
-          <a href="Docs.html" class="flex items-center justify-center border-dashed hover:bg-[#ffffff]/20 transition-colors text-xs font-medium text-white tracking-wide font-geist bg-[#ffffff]/10 h-full border-white/20 border pr-8 pl-8">
+        <div class="col-span-3 md:col-span-4 flex items-center justify-end">
+          <a href="Docs.html" class="hidden md:flex items-center justify-center border-dashed hover:bg-[#ffffff]/20 transition-colors text-xs font-medium text-white tracking-wide font-geist bg-[#ffffff]/10 h-full border-white/20 border pr-8 pl-8">
             DOCS
-          </a><a href="Entreprise.html" class="hidden md:flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r border-l pr-8 pl-8">
+          </a>
+          <a href="Entreprise.html" class="hidden md:flex items-center justify-center hover:bg-[#ffffff]/10 hover:text-white transition-colors border-dashed text-xs font-medium tracking-wide font-geist h-full border-white/10 border-r border-l pr-8 pl-8">
             ENTERPRISE
           </a>
-          <a href="Login.html" class="md:w-auto flex items-center justify-center hover:text-[#ffffff] transition-colors gap-2 text-xs font-medium text-white tracking-wide font-geist w-full h-full pr-8 pl-8">
-            LOGIN
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          <a href="Login.html" class="flex items-center justify-center hover:text-[#ffffff] transition-colors gap-2 text-xs font-medium text-white tracking-wide font-geist h-full pr-4 md:pr-8 pl-4 md:pl-8">
+            <span class="hidden sm:inline">LOGIN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
         </div>
       </div>
@@ -478,7 +481,7 @@
                 category: 'ARCHITECTURE',
                 title: 'System Overview',
                 subtitle: "Multi-agent autonomous trading system with adversarial validation, designed for survival over profit maximization.",
-                toc: ['Design Philosophy', 'Agent Composition', 'Decision Flow'],
+                toc: ['Design Philosophy', 'Agent Composition', 'Decision Flow', 'Summary Metrics'],
                 content: `
                   <div class="mb-12 p-1 bg-gradient-to-r from-[#ffffff]/20 to-transparent rounded-lg border border-[#ffffff]/20">
                     <div class="bg-[#0A0D11] rounded p-5 flex items-start gap-4">
@@ -496,7 +499,7 @@
 
                   <div class="prose prose-invert prose-slate max-w-none">
                     <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Agent Composition</h2>
-                    <p class="mb-6 text-sm leading-7 text-slate-400">9 specialized agents work in adversarial configuration to ensure robust decision-making.</p>
+                    <p class="mb-6 text-sm leading-7 text-slate-400">9 specialized agents work in adversarial configuration to ensure robust decision-making with no single point of failure.</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
                       <div class="p-5 border border-white/10 rounded-lg bg-white/[0.02]">
                         <div class="text-3xl font-light text-white mb-2">4</div>
@@ -526,8 +529,28 @@
                       <div class="relative"><span class="absolute -left-[41px] top-0 flex h-6 w-6 items-center justify-center rounded-full bg-[#05080A] border border-white/20 text-[10px] font-semibold text-white ring-4 ring-[#05080A]">7</span><h3 class="text-white font-medium mb-1">Final Approval</h3><p class="text-sm text-slate-400">Portfolio Manager decision</p></div>
                       <div class="relative"><span class="absolute -left-[41px] top-0 flex h-6 w-6 items-center justify-center rounded-full bg-[#ffffff] text-black text-[10px] font-semibold ring-4 ring-[#05080A]">8</span><h3 class="text-white font-medium mb-1">Guardian Execution</h3><p class="text-sm text-slate-400">Final validation and blockchain execution</p></div>
                     </div>
+
+                    <h2 class="text-2xl font-medium text-white tracking-tight mb-6 mt-12">Summary Metrics</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                      <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
+                        <div class="text-xl font-light text-white">1500+</div>
+                        <p class="text-xs text-slate-400">Data points/cycle</p>
+                      </div>
+                      <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
+                        <div class="text-xl font-light text-white">8</div>
+                        <p class="text-xs text-slate-400">Decision steps</p>
+                      </div>
+                      <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
+                        <div class="text-xl font-light text-white">3</div>
+                        <p class="text-xs text-slate-400">Veto points</p>
+                      </div>
+                      <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
+                        <div class="text-xl font-light text-white">100%</div>
+                        <p class="text-xs text-slate-400">Audit coverage</p>
+                      </div>
+                    </div>
                   </div>
-                \`
+                `
               },
               'data-layer': {
                 category: 'ARCHITECTURE',
@@ -575,14 +598,14 @@
                       </div>
                     </div>
                   </div>
-                \`
+                `
               },
               'ml-pipeline': {
                  category: 'ARCHITECTURE',
                  title: 'ML Pipeline',
                  subtitle: "Regime classification and signal generation for market state detection and opportunity identification.",
                  toc: ['Regime Classification', 'Signal Generation', 'Confidence Thresholds'],
-                 content: \`
+                 content: `
                   <div class="prose prose-invert prose-slate max-w-none">
                     <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Regime Classification</h2>
                     <p class="mb-6 text-sm text-slate-400">Identifies current market state to adjust strategy parameters dynamically.</p>
@@ -626,14 +649,14 @@
                       </div>
                     </div>
                   </div>
-                 \`
+                 `
               },
               'analyst-agents': {
                 category: 'AGENT LAYER',
                 title: 'Analyst Agents',
                 subtitle: "Four specialized agents providing comprehensive market analysis from different perspectives.",
                 toc: ['Technical Analyst', 'Sentiment Analyst', 'On-chain Analyst', 'Macro Analyst'],
-                content: \`
+                content: `
                   <div class="prose prose-invert prose-slate max-w-none">
                     <div class="space-y-6 mb-10">
                       <div class="p-5 border border-white/10 rounded-lg bg-white/[0.02]">
@@ -658,14 +681,14 @@
                       </div>
                     </div>
                   </div>
-                \`
+                `
               },
               'researcher-agents': {
                  category: 'AGENT LAYER',
                  title: 'Researcher Agents',
                  subtitle: "Deep analysis specialists that investigate specific opportunities identified by analysts.",
                  toc: ['Protocol Researcher', 'Risk Researcher'],
-                 content: \`
+                 content: `
                    <div class="prose prose-invert prose-slate max-w-none">
                      <div class="space-y-6 mb-10">
                        <div class="p-5 border border-white/10 rounded-lg bg-white/[0.02]">
@@ -680,38 +703,50 @@
                        </div>
                      </div>
                    </div>
-                 \`
+                 `
               },
               'decision-agents': {
                 category: 'AGENT LAYER',
                 title: 'Decision Agents',
                 subtitle: "Three key agents responsible for trade execution, risk management, and final portfolio decisions.",
-                toc: ['Trader Agent', 'Risk Manager Agent', 'Portfolio Manager Agent'],
-                content: \`
+                toc: ['Trader Agent', 'Risk Manager Agent', 'Portfolio Manager Agent', 'Adversarial Debate'],
+                content: `
                   <div class="prose prose-invert prose-slate max-w-none">
                     <div class="space-y-6 mb-10">
                       <div class="p-5 border border-blue-500/20 rounded-lg bg-blue-500/5">
                         <h3 class="text-blue-400 font-medium mb-2">Trader Agent</h3>
-                        <p class="text-sm text-slate-400 mb-3">Synthesizes all analysis to identify trade opportunities. Proposes entry/exit with reasoning. Minimum 84% confidence threshold.</p>
+                        <p class="text-sm text-slate-400 mb-3">Synthesizes all analysis to identify trade opportunities. Proposes entry/exit with detailed reasoning.</p>
+                        <div class="text-xs text-blue-400/70 mt-2">Minimum confidence: 84% for LP, 80% for Arb, 50-60% for Perps</div>
                       </div>
                       <div class="p-5 border border-yellow-500/20 rounded-lg bg-yellow-500/5">
                         <h3 class="text-yellow-400 font-medium mb-2">Risk Manager Agent</h3>
-                        <p class="text-sm text-slate-400 mb-3">Independent risk assessment. Position sizing based on Kelly criterion. Enforces hard limits (max position, correlation, drawdown).</p>
+                        <p class="text-sm text-slate-400 mb-3">Independent risk assessment. Position sizing based on Kelly criterion (fractional). Enforces hard limits.</p>
+                        <div class="text-xs text-yellow-400/70 mt-2">Limits: Max 5% single position, 15% correlated exposure, 5% daily drawdown</div>
                       </div>
                       <div class="p-5 border border-green-500/20 rounded-lg bg-green-500/5">
                         <h3 class="text-green-400 font-medium mb-2">Portfolio Manager Agent</h3>
-                        <p class="text-sm text-slate-400 mb-3">Final decision authority. Weighs Trader vs Risk Manager. Can veto or modify. Manages overall portfolio balance.</p>
+                        <p class="text-sm text-slate-400 mb-3">Final decision authority. Weighs Trader vs Risk Manager arguments. Can veto or modify any trade.</p>
+                        <div class="text-xs text-green-400/70 mt-2">Manages overall portfolio balance and capital allocation across strategies</div>
                       </div>
                     </div>
+
+                    <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Adversarial Debate</h2>
+                    <p class="text-sm text-slate-400 mb-4">Multi-round challenge/defense process before any trade execution:</p>
+                    <div class="border-l-2 border-white/10 pl-6 space-y-4 mb-10">
+                      <div><span class="text-white font-medium">Round 1:</span> <span class="text-slate-400 text-sm">Trader presents opportunity with supporting evidence</span></div>
+                      <div><span class="text-white font-medium">Round 2:</span> <span class="text-slate-400 text-sm">Risk Manager challenges with counterarguments</span></div>
+                      <div><span class="text-white font-medium">Round 3:</span> <span class="text-slate-400 text-sm">Trader defends or modifies proposal</span></div>
+                      <div><span class="text-white font-medium">Final:</span> <span class="text-slate-400 text-sm">Portfolio Manager makes final decision with reasoning</span></div>
+                    </div>
                   </div>
-                \`
+                `
               },
               'execution-layer': {
                  category: 'EXECUTION',
                  title: 'Execution Layer',
                  subtitle: "Guardian validator and transaction executor ensuring safe, optimized blockchain execution.",
                  toc: ['Guardian Validator', 'Transaction Executor'],
-                 content: \`
+                 content: `
                    <div class="prose prose-invert prose-slate max-w-none">
                      <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Guardian Validator</h2>
                      <p class="mb-6 text-sm text-slate-400">Final safety check before any transaction touches the blockchain.</p>
@@ -738,14 +773,14 @@
                        </table>
                      </div>
                    </div>
-                 \`
+                 `
               },
               'frameworks': {
                 category: 'EXECUTION',
                 title: 'Agent Frameworks',
                 subtitle: "ElizaOS for cognitive processing and Solana Agent Kit (Sendai) for blockchain execution.",
                 toc: ['ElizaOS', 'Solana Agent Kit (Sendai)'],
-                content: \`
+                content: `
                   <div class="prose prose-invert prose-slate max-w-none">
                     <h2 class="text-2xl font-medium text-white tracking-tight mb-6">ElizaOS</h2>
                     <p class="mb-4 text-sm text-slate-400">Provides the cognitive layer for all agents.</p>
@@ -774,14 +809,14 @@
                       </table>
                     </div>
                   </div>
-                \`
+                `
               },
               'lp-rebalancing': {
                  category: 'STRATEGIES',
                  title: 'LP Rebalancing',
                  subtitle: "Concentrated liquidity management with continuous IL monitoring and auto-exit thresholds.",
                  toc: ['Parameters', 'Entry Criteria', 'Exit Triggers'],
-                 content: \`
+                 content: `
                    <div class="prose prose-invert prose-slate max-w-none">
                      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                        <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
@@ -818,14 +853,14 @@
                        <li class="flex items-center gap-2 text-sm text-slate-400"><span class="text-red-400">×</span> Strategy circuit breaker</li>
                      </ul>
                    </div>
-                 \`
+                 `
               },
               'arbitrage': {
                 category: 'STRATEGIES',
                 title: 'Arbitrage',
                 subtitle: "DEX-to-DEX arbitrage with atomic execution and MEV protection via Jito bundles.",
                 toc: ['Parameters', 'Execution'],
-                content: \`
+                content: `
                   <div class="prose prose-invert prose-slate max-w-none">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                       <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
@@ -854,14 +889,14 @@
                       <li class="flex items-center gap-2 text-sm text-slate-400"><span class="text-blue-400">→</span> Abort if conditions change</li>
                     </ul>
                   </div>
-                \`
+                `
               },
               'perpetuals': {
                  category: 'STRATEGIES',
                  title: 'Perpetuals',
                  subtitle: "Leveraged perpetual futures trading with strict risk controls and position limits.",
                  toc: ['Parameters', 'Position Parameters'],
-                 content: \`
+                 content: `
                    <div class="prose prose-invert prose-slate max-w-none">
                      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                        <div class="p-4 border border-white/10 rounded-lg bg-white/[0.02] text-center">
@@ -895,14 +930,14 @@
                        </table>
                      </div>
                    </div>
-                 \`
+                 `
               },
               'monitoring': {
                 category: 'OPERATIONS',
                 title: 'Monitoring & Alerts',
                 subtitle: "Real-time monitoring with configurable alert thresholds and automatic response actions.",
                 toc: ['Alert Thresholds'],
-                content: \`
+                content: `
                   <div class="prose prose-invert prose-slate max-w-none">
                     <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Alert Thresholds</h2>
                     <div class="overflow-hidden rounded-lg border border-white/10 mb-12">
@@ -922,14 +957,14 @@
                       </table>
                     </div>
                   </div>
-                \`
+                `
               },
               'circuit-breakers': {
                  category: 'OPERATIONS',
                  title: 'Circuit Breakers',
                  subtitle: "Per-strategy and global circuit breakers with automatic recovery mechanisms.",
                  toc: ['Per-Strategy Breakers', 'Global Breakers', 'Recovery'],
-                 content: \`
+                 content: `
                    <div class="prose prose-invert prose-slate max-w-none">
                      <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Per-Strategy Breakers</h2>
                      <div class="space-y-4 mb-10">
@@ -958,14 +993,14 @@
                      <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Recovery</h2>
                      <p class="text-sm text-slate-400">Automatic resume after 1 hour if conditions normalize. Full stop events require manual intervention.</p>
                    </div>
-                 \`
+                 `
               },
               'logging': {
                  category: 'OPERATIONS',
                  title: 'Performance Logging',
                  subtitle: "Comprehensive decision logging with full audit trail and multi-tier storage.",
                  toc: ['Logged Data', 'Storage Tiers'],
-                 content: \`
+                 content: `
                    <div class="prose prose-invert prose-slate max-w-none">
                      <h2 class="text-2xl font-medium text-white tracking-tight mb-6">Logged Data</h2>
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
@@ -1006,7 +1041,7 @@
                        </table>
                      </div>
                    </div>
-                 \`
+                 `
               }
             };
 
