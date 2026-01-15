@@ -117,7 +117,7 @@ scrollbar-width: none;
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 border border-dashed border-white/10 max-w-lg rounded-sm overflow-hidden">
-              <button class="group flex gap-3 hover:bg-[#ffffff]/5 transition-all duration-300 sm:border-b-0 sm:border-r border-dashed reveal-on-scroll hover:border hover:border-[#ffffff] hover:shadow-[inset_0_0_10px_2px_rgba(198,249,31,0.1)] border-white/10 border-b pt-5 pr-8 pb-5 pl-8 gap-x-3 gap-y-3 items-center justify-center">
+              <button class="group flex gap-3 hover:bg-[#ffffff]/5 transition-all duration-300 sm:border-b-0 sm:border-r border-dashed reveal-on-scroll hover:border hover:border-[#ffffff] hover:shadow-[inset_0_0_10px_2px_rgba(255,255,255,0.1)] border-white/10 border-b pt-5 pr-8 pb-5 pl-8 gap-x-3 gap-y-3 items-center justify-center">
                 <span class="uppercase text-xs font-medium text-[#ffffff] tracking-wide font-geist">
                   Launch App
                 </span>
@@ -627,7 +627,7 @@ scrollbar-width: none;
         if (!container.isConnected) return;
 
         // 1. Activate Source
-        source.classList.add('border-[#ffffff]', 'shadow-[0_0_15px_rgba(198,249,31,0.15)]');
+        source.classList.add('border-[#ffffff]', 'shadow-[0_0_15px_rgba(255,255,255,0.15)]');
         sourceIcon.classList.replace('text-white/70', 'text-[#ffffff]');
         sourceGlow.classList.remove('opacity-0');
         
@@ -644,7 +644,7 @@ scrollbar-width: none;
         paths.forEach(p => p.classList.add('opacity-20'));
         path.classList.remove('opacity-20');
         path.classList.replace('text-white/10', 'text-[#ffffff]');
-        path.classList.add('opacity-100', 'drop-shadow-[0_0_3px_rgba(198,249,31,0.5)]');
+        path.classList.add('opacity-100', 'drop-shadow-[0_0_3px_rgba(255,255,255,0.5)]');
 
         // 4. Send Packet
         packet.style.opacity = '1';
@@ -657,22 +657,22 @@ scrollbar-width: none;
         await new Promise(r => setTimeout(r, 600));
 
         // 5. Activate Target
-        target.classList.add('border-[#ffffff]', 'scale-110', 'bg-[#ffffff]/10', 'shadow-[0_0_15px_rgba(198,249,31,0.2)]');
+        target.classList.add('border-[#ffffff]', 'scale-110', 'bg-[#ffffff]/10', 'shadow-[0_0_15px_rgba(255,255,255,0.2)]');
         target.querySelector('svg').classList.replace('text-slate-600', 'text-[#ffffff]');
         packet.style.opacity = '0';
 
         await new Promise(r => setTimeout(r, 1200));
 
         // 6. Reset
-        source.classList.remove('border-[#ffffff]', 'shadow-[0_0_15px_rgba(198,249,31,0.15)]');
+        source.classList.remove('border-[#ffffff]', 'shadow-[0_0_15px_rgba(255,255,255,0.15)]');
         sourceIcon.classList.replace('text-[#ffffff]', 'text-white/70');
         sourceGlow.classList.add('opacity-0');
         
         path.classList.replace('text-[#ffffff]', 'text-white/10');
-        path.classList.remove('opacity-100', 'drop-shadow-[0_0_3px_rgba(198,249,31,0.5)]');
+        path.classList.remove('opacity-100', 'drop-shadow-[0_0_3px_rgba(255,255,255,0.5)]');
         paths.forEach(p => p.classList.remove('opacity-20'));
         
-        target.classList.remove('border-[#ffffff]', 'scale-110', 'bg-[#ffffff]/10', 'shadow-[0_0_15px_rgba(198,249,31,0.2)]');
+        target.classList.remove('border-[#ffffff]', 'scale-110', 'bg-[#ffffff]/10', 'shadow-[0_0_15px_rgba(255,255,255,0.2)]');
         target.querySelector('svg').classList.replace('text-[#ffffff]', 'text-slate-600');
         
         await new Promise(r => setTimeout(r, 600));
@@ -788,7 +788,7 @@ scrollbar-width: none;
                   <div class="absolute w-[120px] h-[120px] rounded-full border border-white/5"></div>
 
                   <!-- Radar Sweep -->
-                  <div class="absolute w-[280px] h-[280px] rounded-full bg-[conic-gradient(from_0deg,transparent_0deg_240deg,rgba(198,249,31,0.2)_360deg)] animate-[spin_4s_linear_infinite]"></div>
+                  <div class="absolute w-[280px] h-[280px] rounded-full bg-[conic-gradient(from_0deg,transparent_0deg_240deg,rgba(255,255,255,0.2)_360deg)] animate-[spin_4s_linear_infinite]"></div>
 
                   <!-- Activity Dot -->
                   <div class="absolute top-10 left-10 flex items-center gap-2 z-10">
@@ -1055,7 +1055,7 @@ scrollbar-width: none;
 
         let activeIndex = 0;
         // Styles for active state
-        const activeClasses = ['bg-[#ffffff]/20', 'z-10', 'shadow-[0_0_15px_rgba(198,249,31,0.15)]', 'shadow-[inset_0_0_0_1px_rgba(198,249,31,0.5)]'];
+        const activeClasses = ['bg-[#ffffff]/20', 'z-10', 'shadow-[0_0_15px_rgba(255,255,255,0.15)]', 'shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)]'];
         const inactiveClasses = ['border-transparent'];
         
         const runSequence = async () => {
