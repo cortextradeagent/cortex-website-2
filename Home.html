@@ -1578,11 +1578,11 @@ scrollbar-width: none;
                 </p>
               </div>
 
-              <div class="flex items-center gap-3 bg-white/5 p-1 rounded-lg border border-white/5">
-                <button class="px-4 py-1.5 text-xs font-medium text-black bg-[#ffffff] rounded font-geist reveal-on-scroll">
+              <div class="flex items-center gap-3 bg-white/5 p-1 rounded-lg border border-white/5" id="vault-toggle">
+                <button id="btn-conservative" onclick="showVaults('conservative')" class="px-4 py-1.5 text-xs font-medium text-black bg-[#ffffff] rounded font-geist transition-all duration-300">
                   Conservative
                 </button>
-                <button class="px-4 py-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors font-geist reveal-on-scroll">
+                <button id="btn-aggressive" onclick="showVaults('aggressive')" class="px-4 py-1.5 text-xs font-medium text-slate-400 hover:text-white rounded font-geist transition-all duration-300">
                   Aggressive
                 </button>
               </div>
@@ -1591,7 +1591,8 @@ scrollbar-width: none;
             <div class="mt-12 h-[1px] w-full bg-gradient-to-r from-slate-800 via-slate-700 to-transparent"></div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <!-- Conservative Vaults -->
+          <div id="conservative-vaults" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto transition-all duration-500">
   <!-- Plan 1: Starter Vault -->
   <div class="flex flex-col group hover:bg-white/[0.04] transition-colors duration-300 h-full border-white/10 border rounded-none p-10 relative reveal-on-scroll">
     <!-- Corner Accents (Hidden initially, show on hover) -->
@@ -1728,9 +1729,95 @@ scrollbar-width: none;
     </div>
   </div>
 </div>
+
+          <!-- Aggressive Vaults (Hidden by default) -->
+          <div id="aggressive-vaults" class="hidden grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto transition-all duration-500">
+  <!-- Plan 1: Alpha Vault -->
+  <div class="flex flex-col group hover:bg-white/[0.04] transition-colors duration-300 h-full border-white/10 border rounded-none p-10 relative">
+    <div class="absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 border-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 border-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 border-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="mb-8">
+      <span class="inline-block px-3 py-1 text-xs font-medium text-slate-300 border border-white/10 rounded bg-white/5 group-hover:text-[#ffffff] group-hover:border-[#ffffff] group-hover:bg-[#ffffff]/10 transition-colors duration-300 font-geist">Alpha Vault</span>
+    </div>
+    <div class="mb-2 flex items-baseline gap-1">
+      <span class="text-5xl font-medium text-white tracking-tight font-geist">20%</span>
+      <span class="text-lg text-white/70 font-geist">performance fee</span>
+    </div>
+    <p class="text-white/70 text-sm mb-8 font-geist font-light">High-frequency trading with leveraged positions.</p>
+    <button class="w-full py-4 mb-10 rounded-lg border border-white/10 bg-transparent text-white group-hover:bg-[#ffffff] group-hover:text-black group-hover:border-[#ffffff] transition-all duration-300 text-sm font-medium font-geist">Connect Wallet</button>
+    <div class="mt-auto">
+      <h4 class="text-white font-medium mb-6 font-geist text-sm">What's included</h4>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/70 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Up to 5x leverage</span></li>
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/70 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Perpetual futures</span></li>
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/70 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Momentum strategies</span></li>
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/70 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Priority Discord</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Plan 2: Degen Vault -->
+  <div class="flex flex-col group hover:bg-[#53d692]/5 transition-colors duration-300 h-full border-[#53d692]/30 border rounded-none p-10 relative">
+    <div class="absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 border-[#53d692] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 border-[#53d692] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 border-[#53d692] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-[#53d692] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="mb-8 flex items-center gap-3">
+      <span class="inline-block px-3 py-1 text-xs font-medium text-[#53d692] border border-[#53d692]/30 rounded bg-[#53d692]/10 font-geist">Degen Vault</span>
+      <img src="pump.png" alt="Pump.fun" class="h-6 w-auto object-contain">
+    </div>
+    <div class="mb-2 flex items-baseline gap-1">
+      <span class="text-5xl font-medium text-white tracking-tight font-geist">25%</span>
+      <span class="text-lg text-white/70 font-geist">performance fee</span>
+    </div>
+    <p class="text-white/70 text-sm mb-8 font-geist font-light">Maximum risk, maximum potential. For experienced traders only.</p>
+    <button class="w-full py-4 mb-10 rounded-lg border border-[#53d692]/50 bg-[#53d692]/10 text-[#53d692] hover:bg-[#53d692] hover:text-black transition-all duration-300 text-sm font-medium font-geist">Connect Wallet</button>
+    <div class="mt-auto">
+      <h4 class="text-white font-medium mb-6 font-geist text-sm">What's included</h4>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#53d692" stroke-width="1.5" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Up to 10x leverage</span></li>
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#53d692" stroke-width="1.5" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">New token launches</span></li>
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#53d692" stroke-width="1.5" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Meme coin strategies</span></li>
+        <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#53d692" stroke-width="1.5" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text-white/70 text-sm font-light font-geist">Private alpha group</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
         </div>
       </section>
     </main>
+
+    <script>
+    function showVaults(type) {
+      const conservativeVaults = document.getElementById('conservative-vaults');
+      const aggressiveVaults = document.getElementById('aggressive-vaults');
+      const btnConservative = document.getElementById('btn-conservative');
+      const btnAggressive = document.getElementById('btn-aggressive');
+
+      if (type === 'conservative') {
+        conservativeVaults.classList.remove('hidden');
+        conservativeVaults.classList.add('grid');
+        aggressiveVaults.classList.add('hidden');
+        aggressiveVaults.classList.remove('grid');
+        btnConservative.classList.add('text-black', 'bg-[#ffffff]');
+        btnConservative.classList.remove('text-slate-400');
+        btnAggressive.classList.remove('text-black', 'bg-[#ffffff]');
+        btnAggressive.classList.add('text-slate-400');
+      } else {
+        aggressiveVaults.classList.remove('hidden');
+        aggressiveVaults.classList.add('grid');
+        conservativeVaults.classList.add('hidden');
+        conservativeVaults.classList.remove('grid');
+        btnAggressive.classList.add('text-black', 'bg-[#ffffff]');
+        btnAggressive.classList.remove('text-slate-400');
+        btnConservative.classList.remove('text-black', 'bg-[#ffffff]');
+        btnConservative.classList.add('text-slate-400');
+      }
+    }
+    </script>
     <footer class="border-dashed bg-[#05080A] border-white/10 border-t pt-20 pb-10">
       <div class="max-w-6xl mx-auto w-full flex flex-col font-geist">
         <!-- Top Section: Green -->
