@@ -4,6 +4,15 @@
     <title>Connect - Cortex Agent</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Solana Web3 -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <!-- Wallet Standard -->
+    <script type="module">
+      import { getWallets } from 'https://esm.sh/@wallet-standard/app@1.0.1';
+      import { isWalletAdapterCompatibleStandardWallet } from 'https://esm.sh/@solana/wallet-adapter-base@0.9.23';
+      window.getWallets = getWallets;
+      window.isWalletAdapterCompatibleStandardWallet = isWalletAdapterCompatibleStandardWallet;
+    </script>
     <style id="aura-editor-visibility-style">
       .invisible { visibility: hidden !important; }
     </style>
@@ -121,27 +130,95 @@
               </p>
             </div>
 
-            <div class="space-y-4">
-              <button class="w-full flex items-center justify-between bg-[#ffffff] hover:bg-[#b9ea15] text-black font-medium py-4 px-5 rounded-md text-sm transition-all font-geist">
+            <!-- Connected State (hidden by default) -->
+            <div id="connected-state" class="hidden">
+              <div class="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div>
+                      <p class="text-white text-sm font-medium font-geist" id="wallet-address">Connected</p>
+                      <p class="text-slate-400 text-xs font-geist" id="wallet-balance">Loading...</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button id="copy-address-btn" class="p-2 hover:bg-white/10 rounded-md transition-colors" title="Copy address">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button id="disconnect-btn" class="w-full py-3 px-4 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-400 rounded-md text-sm font-medium font-geist transition-all">
+                Disconnect Wallet
+              </button>
+              <a href="Dashboard.html" class="block w-full mt-4 py-4 px-4 bg-white hover:bg-gray-100 text-black text-center rounded-md text-sm font-medium font-geist transition-all">
+                Go to Dashboard →
+              </a>
+            </div>
+
+            <!-- Wallet Selection (shown by default) -->
+            <div id="wallet-selection" class="space-y-3">
+              <button id="connect-phantom" class="wallet-btn w-full flex items-center justify-between bg-[#ffffff] hover:bg-gray-100 text-black font-medium py-4 px-5 rounded-md text-sm transition-all font-geist group">
                 <div class="flex items-center gap-3">
                   <img src="https://phantom.app/img/phantom-logo.svg" alt="Phantom" class="w-6 h-6">
                   <span>Phantom</span>
                 </div>
-                <span class="text-xs opacity-70">Recommended</span>
+                <span class="text-xs opacity-70 group-hover:opacity-100">Recommended</span>
               </button>
 
-              <button class="w-full flex items-center justify-between bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium py-4 px-5 rounded-md text-sm transition-all font-geist">
+              <button id="connect-solflare" class="wallet-btn w-full flex items-center justify-between bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium py-4 px-5 rounded-md text-sm transition-all font-geist">
                 <div class="flex items-center gap-3">
-                  <svg class="w-6 h-6" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#AB9FF2"/><path d="M28.5 20c0 4.694-3.806 8.5-8.5 8.5S11.5 24.694 11.5 20s3.806-8.5 8.5-8.5 8.5 3.806 8.5 8.5z" fill="#fff"/></svg>
+                  <svg class="w-6 h-6" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#FC822B"/><path d="M20 10l7 12-7 4-7-4 7-12z" fill="#fff"/><path d="M20 28l7-4-7 8-7-8 7 4z" fill="#fff" opacity="0.6"/></svg>
                   <span>Solflare</span>
                 </div>
+                <span class="text-xs text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">Popular</span>
               </button>
 
-              <button class="w-full flex items-center justify-between bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium py-4 px-5 rounded-md text-sm transition-all font-geist">
+              <button id="connect-backpack" class="wallet-btn w-full flex items-center justify-between bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium py-4 px-5 rounded-md text-sm transition-all font-geist">
                 <div class="flex items-center gap-3">
-                  <svg class="w-6 h-6" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#0052FF"/><path d="M20 8c6.627 0 12 5.373 12 12s-5.373 12-12 12S8 26.627 8 20 13.373 8 20 8z" fill="#fff"/></svg>
-                  <span>Coinbase Wallet</span>
+                  <svg class="w-6 h-6" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#E33E3F"/><path d="M12 14h16v12a2 2 0 01-2 2H14a2 2 0 01-2-2V14z" fill="#fff"/><path d="M14 12a2 2 0 012-2h8a2 2 0 012 2v2H14v-2z" fill="#fff"/></svg>
+                  <span>Backpack</span>
                 </div>
+              </button>
+
+              <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-dashed border-white/10"></div>
+                </div>
+                <div class="relative flex justify-center text-xs">
+                  <span class="px-2 bg-[#0B0F13] text-slate-500 font-geist">or</span>
+                </div>
+              </div>
+
+              <button id="show-more-wallets" class="w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white font-medium py-3 px-5 rounded-md text-sm transition-all font-geist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                <span>More Wallets</span>
+              </button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="hidden py-8">
+              <div class="flex flex-col items-center gap-4">
+                <div class="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+                <p class="text-sm text-slate-400 font-geist">Connecting...</p>
+              </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="hidden">
+              <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-4">
+                <div class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                  <div>
+                    <p class="text-red-400 text-sm font-medium font-geist">Connection Failed</p>
+                    <p class="text-red-400/70 text-xs font-geist mt-1" id="error-message">Please try again or use a different wallet.</p>
+                  </div>
+                </div>
+              </div>
+              <button id="retry-btn" class="w-full py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-md text-sm font-medium font-geist transition-all">
+                Try Again
               </button>
             </div>
 
@@ -175,8 +252,179 @@
 
     <!-- Footer / Logos -->
 
-    <script class="">
+    <script>
       lucide.createIcons();
+
+      // Wallet Connection Logic
+      const walletSelection = document.getElementById('wallet-selection');
+      const connectedState = document.getElementById('connected-state');
+      const loadingState = document.getElementById('loading-state');
+      const errorState = document.getElementById('error-state');
+      const walletAddress = document.getElementById('wallet-address');
+      const walletBalance = document.getElementById('wallet-balance');
+
+      function showState(state) {
+        walletSelection.classList.add('hidden');
+        connectedState.classList.add('hidden');
+        loadingState.classList.add('hidden');
+        errorState.classList.add('hidden');
+        state.classList.remove('hidden');
+      }
+
+      function shortenAddress(address) {
+        return address.slice(0, 4) + '...' + address.slice(-4);
+      }
+
+      async function connectWallet(walletType) {
+        showState(loadingState);
+
+        try {
+          let provider;
+
+          if (walletType === 'phantom') {
+            if (!window.solana || !window.solana.isPhantom) {
+              window.open('https://phantom.app/', '_blank');
+              throw new Error('Phantom wallet not installed');
+            }
+            provider = window.solana;
+          } else if (walletType === 'solflare') {
+            if (!window.solflare || !window.solflare.isSolflare) {
+              window.open('https://solflare.com/', '_blank');
+              throw new Error('Solflare wallet not installed');
+            }
+            provider = window.solflare;
+          } else if (walletType === 'backpack') {
+            if (!window.backpack) {
+              window.open('https://backpack.app/', '_blank');
+              throw new Error('Backpack wallet not installed');
+            }
+            provider = window.backpack;
+          }
+
+          const resp = await provider.connect();
+          const publicKey = resp.publicKey.toString();
+
+          // Store connected wallet info
+          localStorage.setItem('connectedWallet', walletType);
+          localStorage.setItem('walletAddress', publicKey);
+
+          // Update UI
+          walletAddress.textContent = shortenAddress(publicKey);
+
+          // Get balance
+          try {
+            const connection = new solanaWeb3.Connection(
+              'https://api.mainnet-beta.solana.com',
+              'confirmed'
+            );
+            const balance = await connection.getBalance(new solanaWeb3.PublicKey(publicKey));
+            walletBalance.textContent = (balance / 1e9).toFixed(4) + ' SOL';
+          } catch (e) {
+            walletBalance.textContent = 'Balance unavailable';
+          }
+
+          showState(connectedState);
+
+        } catch (error) {
+          console.error('Connection error:', error);
+          document.getElementById('error-message').textContent = error.message || 'Please try again or use a different wallet.';
+          showState(errorState);
+        }
+      }
+
+      async function disconnectWallet() {
+        try {
+          const walletType = localStorage.getItem('connectedWallet');
+
+          if (walletType === 'phantom' && window.solana) {
+            await window.solana.disconnect();
+          } else if (walletType === 'solflare' && window.solflare) {
+            await window.solflare.disconnect();
+          } else if (walletType === 'backpack' && window.backpack) {
+            await window.backpack.disconnect();
+          }
+        } catch (e) {
+          console.error('Disconnect error:', e);
+        }
+
+        localStorage.removeItem('connectedWallet');
+        localStorage.removeItem('walletAddress');
+        showState(walletSelection);
+      }
+
+      // Event Listeners
+      document.getElementById('connect-phantom').addEventListener('click', () => connectWallet('phantom'));
+      document.getElementById('connect-solflare').addEventListener('click', () => connectWallet('solflare'));
+      document.getElementById('connect-backpack').addEventListener('click', () => connectWallet('backpack'));
+      document.getElementById('disconnect-btn').addEventListener('click', disconnectWallet);
+      document.getElementById('retry-btn').addEventListener('click', () => showState(walletSelection));
+
+      document.getElementById('copy-address-btn').addEventListener('click', () => {
+        const address = localStorage.getItem('walletAddress');
+        if (address) {
+          navigator.clipboard.writeText(address);
+          // Brief visual feedback
+          const btn = document.getElementById('copy-address-btn');
+          btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          setTimeout(() => {
+            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+          }, 1500);
+        }
+      });
+
+      document.getElementById('show-more-wallets').addEventListener('click', () => {
+        alert('More wallet integrations coming soon! For now, please use Phantom, Solflare, or Backpack.');
+      });
+
+      // Check for existing connection on page load
+      async function checkExistingConnection() {
+        const savedWallet = localStorage.getItem('connectedWallet');
+        const savedAddress = localStorage.getItem('walletAddress');
+
+        if (savedWallet && savedAddress) {
+          let provider;
+          let isConnected = false;
+
+          try {
+            if (savedWallet === 'phantom' && window.solana?.isPhantom) {
+              provider = window.solana;
+              isConnected = provider.isConnected;
+            } else if (savedWallet === 'solflare' && window.solflare?.isSolflare) {
+              provider = window.solflare;
+              isConnected = provider.isConnected;
+            } else if (savedWallet === 'backpack' && window.backpack) {
+              provider = window.backpack;
+              isConnected = provider.isConnected;
+            }
+
+            if (isConnected) {
+              walletAddress.textContent = shortenAddress(savedAddress);
+              walletBalance.textContent = 'Loading...';
+              showState(connectedState);
+
+              // Get fresh balance
+              try {
+                const connection = new solanaWeb3.Connection(
+                  'https://api.mainnet-beta.solana.com',
+                  'confirmed'
+                );
+                const balance = await connection.getBalance(new solanaWeb3.PublicKey(savedAddress));
+                walletBalance.textContent = (balance / 1e9).toFixed(4) + ' SOL';
+              } catch (e) {
+                walletBalance.textContent = 'Balance unavailable';
+              }
+            } else {
+              localStorage.removeItem('connectedWallet');
+              localStorage.removeItem('walletAddress');
+            }
+          } catch (e) {
+            console.error('Check connection error:', e);
+          }
+        }
+      }
+
+      // Wait for wallet extensions to load
+      setTimeout(checkExistingConnection, 500);
     </script>
-  
+
 </body></html>

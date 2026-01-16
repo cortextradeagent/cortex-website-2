@@ -242,12 +242,23 @@ animation: flow 2s linear infinite;
       </section>
 
       <!-- The Layers Section -->
-      <section class="py-24 border-b border-dashed border-white/10">
-        <div class="max-w-6xl mx-auto px-6">
+      <section class="py-24 border-b border-dashed border-white/10 relative overflow-hidden">
+        <!-- Unicorn Background Animation -->
+        <div class="absolute inset-0 w-full h-full -z-10">
+          <div data-us-project="qpSlPSWA2bdkUAYztz8z" class="absolute w-full h-full left-0 top-0 opacity-60"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent mix-blend-overlay pointer-events-none"></div>
+          <div class="absolute inset-0 bg-[#05080A]/40 pointer-events-none"></div>
+        </div>
+        <script type="text/javascript">
+          !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+        </script>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
               <div>
-                <span class="text-[#ffffff] font-mono text-xs tracking-widest uppercase mb-4 block">Platform Layers</span>
+                <span class="text-[#ffffff] font-mono text-xs tracking-widest uppercase mb-4 block reveal-on-scroll">Platform Layers</span>
                 <h2 class="text-3xl md:text-5xl text-white font-light tracking-tighter font-geist reveal-on-scroll">Composable Infrastructure.</h2>
+                <p class="text-white/50 text-sm mt-4 max-w-lg font-geist reveal-on-scroll">Each layer operates independently yet communicates seamlessly through well-defined interfaces.</p>
               </div>
               <p class="text-white/60 max-w-sm text-sm font-geist reveal-on-scroll">
                 Built on a modular stack that separates reasoning, context, and execution, allowing for infinite scalability.
@@ -256,61 +267,128 @@ animation: flow 2s linear infinite;
 
            <!-- Layer Diagram -->
            <div class="grid grid-cols-1 gap-4 font-geist">
-              
+
               <!-- Layer 3: Application -->
-              <div class="group border border-dashed border-white/10 rounded-lg p-6 hover:bg-white/[0.02] transition-all reveal-on-scroll relative overflow-hidden">
-                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                 <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-4">
-                       <span class="font-mono text-xs text-white/40">L3</span>
-                       <h3 class="text-xl text-white font-medium">Application Layer</h3>
+              <div class="group border border-white/10 bg-black/40 backdrop-blur-sm rounded-lg p-6 hover:bg-white/[0.05] hover:border-white/20 transition-all reveal-on-scroll relative overflow-hidden">
+                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-white to-white/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex items-start md:items-center gap-4 flex-col md:flex-row">
+                       <div class="flex items-center gap-4">
+                         <span class="font-mono text-xs text-white/40 w-8">L3</span>
+                         <h3 class="text-xl text-white font-medium">Application Layer</h3>
+                       </div>
+                       <p class="text-white/40 text-xs md:ml-12">User-facing interfaces and workflow orchestration</p>
                     </div>
-                    <div class="flex gap-2">
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Workflows</span>
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Interfaces</span>
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Permissions</span>
+                    <div class="flex flex-wrap gap-2">
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Workflows</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Interfaces</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Permissions</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Webhooks</span>
                     </div>
                  </div>
               </div>
 
               <!-- Connector -->
-              <div class="h-8 w-px bg-dashed border-l border-dashed border-white/20 mx-auto"></div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="h-4 w-px border-l border-dashed border-white/30"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/30"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="h-4 w-px border-l border-dashed border-white/30"></div>
+              </div>
 
               <!-- Layer 2: Intelligence -->
-              <div class="group border border-dashed border-white/10 rounded-lg p-6 hover:bg-white/[0.02] transition-all reveal-on-scroll relative overflow-hidden">
-                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                 <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-4">
-                       <span class="font-mono text-xs text-white/40">L2</span>
-                       <h3 class="text-xl text-white font-medium">Orchestration Layer</h3>
+              <div class="group border border-white/10 bg-black/40 backdrop-blur-sm rounded-lg p-6 hover:bg-white/[0.05] hover:border-white/20 transition-all reveal-on-scroll relative overflow-hidden">
+                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-white to-white/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex items-start md:items-center gap-4 flex-col md:flex-row">
+                       <div class="flex items-center gap-4">
+                         <span class="font-mono text-xs text-white/40 w-8">L2</span>
+                         <h3 class="text-xl text-white font-medium">Orchestration Layer</h3>
+                       </div>
+                       <p class="text-white/40 text-xs md:ml-12">AI reasoning, memory management, and decision making</p>
                     </div>
-                    <div class="flex gap-2">
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Model Routing</span>
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Memory Graph</span>
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Planning</span>
+                    <div class="flex flex-wrap gap-2">
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Model Routing</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Memory Graph</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Planning</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Context</span>
                     </div>
                  </div>
               </div>
 
               <!-- Connector -->
-              <div class="h-8 w-px bg-dashed border-l border-dashed border-white/20 mx-auto"></div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="h-4 w-px border-l border-dashed border-white/30"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/30"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="h-4 w-px border-l border-dashed border-white/30"></div>
+              </div>
 
               <!-- Layer 1: Infrastructure -->
-              <div class="group border border-dashed border-white/10 rounded-lg p-6 hover:bg-white/[0.02] transition-all reveal-on-scroll relative overflow-hidden">
-                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                 <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-4">
-                       <span class="font-mono text-xs text-white/40">L1</span>
-                       <h3 class="text-xl text-white font-medium">Compute Layer</h3>
+              <div class="group border border-white/10 bg-black/40 backdrop-blur-sm rounded-lg p-6 hover:bg-white/[0.05] hover:border-white/20 transition-all reveal-on-scroll relative overflow-hidden">
+                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-white to-white/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex items-start md:items-center gap-4 flex-col md:flex-row">
+                       <div class="flex items-center gap-4">
+                         <span class="font-mono text-xs text-white/40 w-8">L1</span>
+                         <h3 class="text-xl text-white font-medium">Compute Layer</h3>
+                       </div>
+                       <p class="text-white/40 text-xs md:ml-12">Distributed infrastructure and data persistence</p>
                     </div>
-                    <div class="flex gap-2">
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Edge Nodes</span>
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Gateways</span>
-                       <span class="px-3 py-1 bg-white/5 rounded text-xs text-white/70 border border-white/5">Storage</span>
+                    <div class="flex flex-wrap gap-2">
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Edge Nodes</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Gateways</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Storage</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">CDN</span>
                     </div>
                  </div>
               </div>
 
+              <!-- Connector to Protocol -->
+              <div class="flex flex-col items-center gap-1">
+                <div class="h-4 w-px border-l border-dashed border-white/30"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/30"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="h-4 w-px border-l border-dashed border-white/30"></div>
+              </div>
+
+              <!-- Layer 0: Protocol -->
+              <div class="group border border-white/10 bg-black/40 backdrop-blur-sm rounded-lg p-6 hover:bg-white/[0.05] hover:border-white/20 transition-all reveal-on-scroll relative overflow-hidden">
+                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-white to-white/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex items-start md:items-center gap-4 flex-col md:flex-row">
+                       <div class="flex items-center gap-4">
+                         <span class="font-mono text-xs text-white/40 w-8">L0</span>
+                         <h3 class="text-xl text-white font-medium">Protocol Layer</h3>
+                       </div>
+                       <p class="text-white/40 text-xs md:ml-12">Blockchain integrations and smart contract execution</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Solana RPC</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">DeFi Protocols</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Oracles</span>
+                       <span class="px-3 py-1.5 bg-white/5 rounded-md text-xs text-white/70 border border-white/10 hover:bg-white/10 transition-colors cursor-default">Validators</span>
+                    </div>
+                 </div>
+              </div>
+
+           </div>
+
+           <!-- Stats Row -->
+           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+              <div class="text-center p-6 border border-white/5 rounded-lg bg-black/20 backdrop-blur-sm reveal-on-scroll">
+                <div class="text-2xl md:text-3xl font-light text-white mb-1 font-geist">99.9%</div>
+                <div class="text-xs text-white/40 font-geist">Uptime SLA</div>
+              </div>
+              <div class="text-center p-6 border border-white/5 rounded-lg bg-black/20 backdrop-blur-sm reveal-on-scroll">
+                <div class="text-2xl md:text-3xl font-light text-white mb-1 font-geist">&lt;50ms</div>
+                <div class="text-xs text-white/40 font-geist">Avg Latency</div>
+              </div>
+              <div class="text-center p-6 border border-white/5 rounded-lg bg-black/20 backdrop-blur-sm reveal-on-scroll">
+                <div class="text-2xl md:text-3xl font-light text-white mb-1 font-geist">10K+</div>
+                <div class="text-xs text-white/40 font-geist">Concurrent Agents</div>
+              </div>
+              <div class="text-center p-6 border border-white/5 rounded-lg bg-black/20 backdrop-blur-sm reveal-on-scroll">
+                <div class="text-2xl md:text-3xl font-light text-white mb-1 font-geist">100%</div>
+                <div class="text-xs text-white/40 font-geist">Non-Custodial</div>
+              </div>
            </div>
         </div>
       </section>

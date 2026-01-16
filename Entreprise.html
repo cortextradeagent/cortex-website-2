@@ -32,7 +32,8 @@ scrollbar-width: none;
 </style>
 <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">
 .font-geist { font-family: 'Geist', sans-serif !important; }
-</style></head>
+</style>
+</head>
   <body class="bg-[#05080A] min-h-screen flex flex-col overflow-x-hidden selection:bg-[#ffffff]/30 selection:text-[#ffffff] text-white/70">
     <!-- Navigation -->
     <header class="border-dashed sticky z-50 bg-[#000000] w-full top-0 backdrop-blur-md">
@@ -97,8 +98,11 @@ scrollbar-width: none;
     <!-- Main Content Wrapper -->
     <main class="flex-grow flex flex-col">
       <!-- Hero Section -->
-      <div class="relative pt-32 pb-24 px-6 border-b border-dashed border-white/10 bg-[#05080A]">
-        <div class="max-w-4xl mx-auto text-center">
+      <div class="relative pt-32 pb-24 px-6 border-b border-dashed border-white/10 bg-[#05080A] overflow-hidden">
+        <!-- Unicorn Background Animation -->
+        <div data-us-project="aNQ1HJcO2IvNyDCGls8J" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0;"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#ffffff] text-xs font-medium font-geist mb-8 uppercase tracking-widest reveal-on-scroll">
             <div class="w-1.5 h-1.5 rounded-full bg-[#ffffff] animate-pulse"></div>
             Enterprise Edition
@@ -334,62 +338,69 @@ scrollbar-width: none;
             Integrates with your DeFi stack.
           </h2>
         </div>
-        <div class="relative flex overflow-x-hidden group reveal-on-scroll">
-          <div class="animate-marquee flex gap-16 items-center whitespace-nowrap py-4 opacity-30 hover:opacity-100 transition-opacity duration-500">
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              JUPITER
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              RAYDIUM
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              ORCA
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              MARINADE
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              JITO
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              KAMINO
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              MARGINFI
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              DRIFT
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              PHANTOM
-            </span>
-            <!-- Repeat -->
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              JUPITER
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              RAYDIUM
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              ORCA
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              MARINADE
-            </span>
-            <span class="text-2xl text-white font-semibold px-4 font-geist tracking-tighter">
-              JITO
-            </span>
+        <div class="relative flex overflow-x-hidden group reveal-on-scroll" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+          <div class="animate-marquee-enterprise flex items-center py-4">
+            <!-- Set 1 -->
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="solana-white.png" alt="Solana" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="1.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="2.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="3.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="4.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="5.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="6.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="7.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <!-- Set 2 -->
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="solana-white.png" alt="Solana" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="1.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="2.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="3.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="4.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="5.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="6.png" alt="Protocol" class="h-20 w-auto">
+            </div>
+            <div class="w-56 h-20 flex-shrink-0 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+              <img src="7.png" alt="Protocol" class="h-20 w-auto">
+            </div>
           </div>
         </div>
         <style>
-          @keyframes marquee-scroll {
+          @keyframes marquee-enterprise {
               0% { transform: translateX(0); }
               100% { transform: translateX(-50%); }
           }
-          .animate-marquee {
+          .animate-marquee-enterprise {
               display: flex;
               width: fit-content;
-              animation: marquee-scroll 60s linear infinite;
+              animation: marquee-enterprise 80s linear infinite;
           }
         </style>
       </div>
@@ -543,5 +554,10 @@ scrollbar-width: none;
         });
       });
     </script>
-  
+
+    <!-- Initialize Unicorn Studio -->
+    <script type="text/javascript">
+      !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+    </script>
+
 </body></html>
