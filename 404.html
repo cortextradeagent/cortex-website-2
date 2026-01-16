@@ -1,0 +1,48 @@
+<html lang="en" class="dark"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found | Cortex Agent</title>
+<link rel="icon" type="image/png" href="/cortex-logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Geist', sans-serif; background-color: #05080A; }
+.font-geist { font-family: 'Geist', sans-serif !important; }
+</style>
+</head>
+<body class="bg-[#05080A] min-h-screen flex flex-col overflow-x-hidden text-white">
+  <!-- Navigation -->
+  <header class="border-dashed sticky z-50 bg-[#000000] w-full top-0 backdrop-blur-md border-b border-white/10">
+    <div class="flex items-center justify-center h-16 sm:h-20">
+      <a href="/" class="inline-flex items-center justify-center gap-2">
+        <img src="/cortex-logo.png" alt="Cortex Agent" class="h-10 w-auto">
+        <span class="text-white font-geist font-semibold text-lg tracking-tight">CORTEX</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 404 Content -->
+  <main class="flex-1 flex items-center justify-center px-6">
+    <div class="text-center max-w-2xl">
+      <h1 class="text-[12rem] md:text-[16rem] font-semibold tracking-tighter leading-none text-white/10 select-none">404</h1>
+      <div class="mt-[-4rem] md:mt-[-6rem] relative z-10">
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-4">Page Not Found</h2>
+        <p class="text-white/50 text-lg mb-8 font-geist">The page you're looking for doesn't exist or has been moved.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" class="px-8 py-4 bg-white text-black font-medium text-sm font-geist hover:bg-gray-200 transition-colors">
+            Go Home
+          </a>
+          <a href="/Docs" class="px-8 py-4 border border-white/20 text-white font-medium text-sm font-geist hover:bg-white/5 transition-colors">
+            Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dashed border-white/10 py-6 text-center text-white/30 text-sm font-geist">
+    © 2025 Cortex Agent. All rights reserved.
+  </footer>
+</body>
+</html>
+

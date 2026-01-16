@@ -481,10 +481,10 @@ scrollbar-width: none;
                   Legal
                 </span>
                 <div class="flex flex-col gap-2">
-                  <a href="#" class="hover:text-black/60 transition-colors reveal-on-scroll">
+                  <a href="/Terms" class="hover:text-black/60 transition-colors reveal-on-scroll">
                     Terms of Service
                   </a>
-                  <a href="#" class="hover:text-black/60 transition-colors reveal-on-scroll">
+                  <a href="/Privacy" class="hover:text-black/60 transition-colors reveal-on-scroll">
                     Privacy Policy
                   </a>
                 </div>
@@ -559,6 +559,34 @@ scrollbar-width: none;
     <!-- Initialize Unicorn Studio -->
     <script type="text/javascript">
       !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#0a0f14] border-t border-white/10 hidden">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-white/70 font-geist text-center sm:text-left">
+          We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+          <a href="/Privacy" class="text-white hover:underline ml-1">Learn more</a>
+        </p>
+        <div class="flex gap-3">
+          <button onclick="declineCookies()" class="px-4 py-2 text-sm text-white/50 hover:text-white transition-colors font-geist">Decline</button>
+          <button onclick="acceptCookies()" class="px-6 py-2 bg-white text-black text-sm font-medium font-geist hover:bg-gray-200 transition-colors">Accept</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function acceptCookies() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookie-banner').classList.add('hidden');
+      }
+      function declineCookies() {
+        localStorage.setItem('cookieConsent', 'declined');
+        document.getElementById('cookie-banner').classList.add('hidden');
+      }
+      if (!localStorage.getItem('cookieConsent')) {
+        document.getElementById('cookie-banner').classList.remove('hidden');
+      }
     </script>
 
 </body></html>
