@@ -819,7 +819,7 @@ scrollbar-width: none;
             <!-- Top Row Grid -->
             <div class="grid grid-cols-1 md:grid-cols-12 border-dashed border-white/10 border-b">
               <!-- Top Left: Radar -->
-              <div class="col-span-12 md:col-span-4 md:border-b-0 md:border-r overflow-hidden group border-dashed reveal-on-scroll h-[360px] border-white/10 border-b relative">
+              <div class="col-span-12 md:col-span-4 md:border-b-0 md:border-r overflow-hidden group border-dashed reveal-on-scroll h-[420px] border-white/10 border-b relative">
                 <!-- Radar Background -->
                 <div class="flex -translate-y-16 opacity-80 absolute top-0 right-0 bottom-0 left-0 items-center justify-center">
                   <!-- Radar Rings -->
@@ -852,7 +852,7 @@ scrollbar-width: none;
               </div>
 
               <!-- Top Middle: Alerts -->
-              <div class="col-span-12 md:col-span-4 md:border-b-0 md:border-r border-dashed flex flex-col reveal-on-scroll h-[360px] border-white/10 border-b pt-8 pr-8 pb-8 pl-8" style="">
+              <div class="col-span-12 md:col-span-4 md:border-b-0 md:border-r border-dashed flex flex-col reveal-on-scroll h-[420px] border-white/10 border-b pt-8 pr-8 pb-8 pl-8" style="">
                 <style>
                   @keyframes progress-loop {
                     0% { width: 0%; opacity: 0.5; }
@@ -884,38 +884,11 @@ scrollbar-width: none;
                 </div>
 
                 <div class="flex-1 space-y-4">
-                  <!-- Alert Item 1 -->
-                  <div class="group cursor-pointer reveal-on-scroll">
-                    <div class="flex items-center justify-between mb-2">
-                      <div class="flex items-center gap-3">
-                        <div class="w-7 h-7 rounded bg-[#ffffff]/10 border border-[#ffffff]/20 flex items-center justify-center text-[#ffffff]">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                          </svg>
-                        </div>
-                        <span class="text-[10px] font-semibold text-[#ffffff] uppercase tracking-wide font-geist">
-                          Trade Signal
-                        </span>
-                      </div>
-                      <span class="text-[10px] text-slate-600 font-mono">
-                        EXECUTING
-                      </span>
-                    </div>
-                    <div class="h-[2px] w-full bg-white/5 rounded-full overflow-hidden">
-                      <div class="h-full bg-[#ffffff] shadow-[0_0_10px_#ffffff]" style="animation: progress-loop 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;"></div>
-                    </div>
-                  </div>
-
                   <!-- Alert Item 2 -->
                   <div class="group cursor-pointer reveal-on-scroll">
                     <div class="flex items-center justify-between mb-2">
                       <div class="flex items-center gap-3">
-                        <div class="w-7 h-7 rounded bg-white/5 border border-white/10 flex items-center justify-center text-slate-500 group-hover:text-white group-hover:border-white/20 transition-colors">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 6v6l4 2"></path>
-                          </svg>
-                        </div>
+                        <img src="pyth.png" alt="Pyth" class="w-10 h-10 rounded object-contain">
                         <span class="text-[10px] font-semibold text-slate-500 group-hover:text-white uppercase tracking-wide font-geist transition-colors">
                           Pyth Oracle
                         </span>
@@ -933,11 +906,7 @@ scrollbar-width: none;
                   <div class="group cursor-pointer reveal-on-scroll">
                     <div class="flex items-center justify-between mb-2">
                       <div class="flex items-center gap-3">
-                        <div class="w-7 h-7 rounded bg-white/5 border border-white/10 flex items-center justify-center text-slate-500 group-hover:text-white group-hover:border-white/20 transition-colors">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                          </svg>
-                        </div>
+                        <img src="7.png" alt="Jupiter" class="w-12 h-12 rounded object-contain">
                         <span class="text-[10px] font-semibold text-slate-500 group-hover:text-white uppercase tracking-wide font-geist transition-colors">
                           Jupiter Swap
                         </span>
@@ -955,12 +924,7 @@ scrollbar-width: none;
                   <div class="group cursor-pointer reveal-on-scroll">
                     <div class="flex items-center justify-between mb-2">
                       <div class="flex items-center gap-3">
-                        <div class="w-7 h-7 rounded bg-white/5 border border-white/10 flex items-center justify-center text-slate-500 group-hover:text-white group-hover:border-white/20 transition-colors">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 3v18h18"></path>
-                            <path d="m19 9-5 5-4-4-3 3"></path>
-                          </svg>
-                        </div>
+                        <img src="birdeye.png" alt="Birdeye" class="w-16 h-16 rounded object-contain -ml-2">
                         <span class="text-[10px] font-semibold text-slate-500 group-hover:text-white uppercase tracking-wide font-geist transition-colors">
                           Birdeye Data
                         </span>
@@ -977,7 +941,7 @@ scrollbar-width: none;
               </div>
 
               <!-- Top Right: Icon Grid -->
-              <div class="col-span-12 md:col-span-4 reveal-on-scroll bg-[#05080A] h-[360px] relative" style="">
+              <div class="col-span-12 md:col-span-4 reveal-on-scroll bg-[#05080A] h-[420px] relative" style="">
                 <!-- Grid Pattern -->
                 <div id="grid-aura-emjszhattn1hypgv" class="grid grid-cols-4 grid-rows-4 divide-x divide-y divide-white/5 border-white/5 border-b absolute top-0 right-0 bottom-0 left-0">
   <!-- Row 1 -->
@@ -1253,12 +1217,10 @@ scrollbar-width: none;
                 <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-transparent"></div>
               </div>
               <div class="relative flex-1 flex flex-col p-10">
-                <div class="flex items-center gap-2 text-white/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                  </svg>
+                <div class="flex items-center gap-3 text-white/90">
+                  <img src="mert.jpg" alt="Bald Man" class="w-10 h-10 rounded-full object-cover">
                   <span class="text-sm font-semibold tracking-wide">
-                    DeFi Whale
+                    Bald Man
                   </span>
                 </div>
                 <div class="mt-8 text-white/20">
@@ -1268,9 +1230,9 @@ scrollbar-width: none;
                   </svg>
                 </div>
                 <p class="mt-6 text-[17px] leading-relaxed text-white/85 min-h-[210px] reveal-on-scroll">
-                  "I was manually managing positions across 5 different protocols.
-                  Cortex automated everything—rebalancing, harvesting, compounding.
-                  My yields increased 40% while I spend zero time monitoring."
+                  "I installed Cortex to manage my crypto but now it's managing my life.
+                  It auto-ordered 47 pizzas, mass-liked my ex's photos from 2019,
+                  and somehow got me banned from 3 Discord servers. 10/10 would recommend."
                 </p>
                 <div class="mt-10 flex justify-end">
                   <a href="Docs.html" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/50 pb-0.5">
@@ -1300,18 +1262,6 @@ scrollbar-width: none;
                   </div>
                 </div>
               </div>
-              <div class="flex items-center gap-3 border-t border-white/10 p-7 h-[88px]">
-                <img src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="Alex Chen" class="w-10 h-10 rounded-full object-cover bg-slate-800 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
-                <div>
-                  <div class="text-sm font-semibold text-white">
-                    Alex Chen
-                  </div>
-                  <div class="text-xs text-white/70">
-                    Crypto Investor
-                    <span class="text-white/80">@alexdefi</span>
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- Card 2 -->
             <div class="group relative flex h-full flex-col bg-[#05080A] reveal-on-scroll">
@@ -1319,12 +1269,10 @@ scrollbar-width: none;
                 <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-transparent"></div>
               </div>
               <div class="relative flex-1 flex flex-col p-10">
-                <div class="flex items-center gap-2 text-white/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="12" r="10"></circle>
-                  </svg>
+                <div class="flex items-center gap-3 text-white/90">
+                  <img src="toly.jpg" alt="Toly" class="w-10 h-10 rounded-full object-cover">
                   <span class="text-sm font-semibold tracking-wide">
-                    Solana DAO
+                    Toly
                   </span>
                 </div>
                 <div class="mt-8 text-white/20">
@@ -1334,10 +1282,7 @@ scrollbar-width: none;
                   </svg>
                 </div>
                 <p class="mt-6 text-[17px] leading-relaxed text-white/85 min-h-[210px] reveal-on-scroll">
-                  "Our treasury was sitting idle. After integrating Cortex,
-                  we're earning consistent yields while maintaining full
-                  transparency for our community. The risk controls are exactly
-                  what we needed."
+                  "I have no idea about this project."
                 </p>
                 <div class="mt-10 flex justify-end">
                   <a href="Docs.html" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/50 pb-0.5">
@@ -1367,18 +1312,6 @@ scrollbar-width: none;
                   </div>
                 </div>
               </div>
-              <div class="flex items-center gap-3 border-t border-white/10 p-7 h-[88px]">
-                <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Marcus Wei" class="w-10 h-10 rounded-full object-cover bg-slate-800 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
-                <div>
-                  <div class="text-sm font-semibold text-white">
-                    Marcus Wei
-                  </div>
-                  <div class="text-xs text-white/70">
-                    Treasury Lead
-                    <span class="text-white/80">@solana_dao</span>
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- Card 3 -->
             <div class="group relative flex h-full flex-col bg-[#05080A] reveal-on-scroll">
@@ -1386,12 +1319,10 @@ scrollbar-width: none;
                 <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-transparent"></div>
               </div>
               <div class="relative flex-1 flex flex-col p-10">
-                <div class="flex items-center gap-2 text-white/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                  </svg>
+                <div class="flex items-center gap-3 text-white/90">
+                  <img src="khamenei.jpg" alt="Khamenei" class="w-10 h-10 rounded-full object-cover">
                   <span class="text-sm font-semibold tracking-wide">
-                    Yield Hunter
+                    Khamenei
                   </span>
                 </div>
                 <div class="mt-8 text-white/20">
@@ -1401,10 +1332,7 @@ scrollbar-width: none;
                   </svg>
                 </div>
                 <p class="mt-6 text-[17px] leading-relaxed text-white/85 min-h-[210px] reveal-on-scroll">
-                  "The neural routing is incredible. Cortex automatically finds
-                  the best yield opportunities across protocols and executes
-                  trades at optimal times. It's like having a 24/7 trading desk
-                  working for you."
+                  "I used Cortex and I think I've found a source of income for my people for the first time."
                 </p>
                 <div class="mt-10 flex justify-end">
                   <a href="Docs.html" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/50 pb-0.5">
@@ -1431,16 +1359,6 @@ scrollbar-width: none;
                   </div>
                   <div class="mt-2 text-xs font-medium text-white/70">
                     Execution latency
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-center gap-3 border-t border-white/10 p-7 h-[88px]">
-                <img src="https://i.pravatar.cc/150?u=a04258114e29026302d" alt="Sarah Kim" class="w-10 h-10 rounded-full object-cover bg-slate-800 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
-                <div>
-                  <div class="text-sm font-semibold text-white">Sarah Kim</div>
-                  <div class="text-xs text-white/70">
-                    DeFi Trader
-                    <span class="text-white/80">@yieldhunter</span>
                   </div>
                 </div>
               </div>
