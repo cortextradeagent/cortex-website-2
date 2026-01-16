@@ -1458,6 +1458,104 @@ scrollbar-width: none;
       </section>
       <section class="border-dashed bg-[#05080A] border-white/10 border-b pt-24 pb-24">
         <div class="max-w-6xl mx-auto px-6">
+
+          <!-- Integrations Animation Section -->
+          <div class="mb-20">
+            <div class="text-center mb-12">
+              <span class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 text-[11px] text-white/80 ring-1 ring-white/10 uppercase tracking-widest rounded-md font-geist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
+                  <path d="M12 22v-5"></path><path d="M9 8V2"></path><path d="M15 8V2"></path>
+                  <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"></path>
+                </svg>
+                Integrations
+              </span>
+              <h3 class="text-3xl md:text-4xl font-light tracking-tight mt-4 text-white font-geist reveal-on-scroll">
+                Connect your entire DeFi stack
+              </h3>
+              <p class="mx-auto mt-3 max-w-2xl text-white/50 font-geist reveal-on-scroll">
+                One platform, infinite possibilities. Sync with all major Solana protocols.
+              </p>
+            </div>
+
+            <!-- Protocol Icons -->
+            <div class="flex items-center justify-center gap-6 sm:gap-10 reveal-on-scroll">
+              <span class="inline-flex h-10 w-10 items-center justify-center bg-white/5 ring-1 ring-white/10 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+              </span>
+              <span class="inline-flex h-10 w-10 items-center justify-center bg-white/5 ring-1 ring-white/10 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="m2 17 10 5 10-5"></path><path d="m2 12 10 5 10-5"></path></svg>
+              </span>
+              <span class="inline-flex h-10 w-10 items-center justify-center bg-white/5 ring-1 ring-white/10 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path></svg>
+              </span>
+              <span class="inline-flex h-10 w-10 items-center justify-center bg-white/5 ring-1 ring-white/10 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+              </span>
+              <span class="inline-flex h-10 w-10 items-center justify-center bg-white/5 ring-1 ring-white/10 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+              </span>
+              <span class="inline-flex h-10 w-10 items-center justify-center bg-white/5 ring-1 ring-white/10 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </span>
+            </div>
+
+            <!-- Animated Connection Lines -->
+            <div class="relative mt-6 h-72 max-w-4xl mx-auto">
+              <svg viewBox="0 0 900 360" class="w-full h-full" fill="none" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <filter id="glow-white" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+
+                <circle cx="150" cy="30" r="4" fill="#ffffff" filter="url(#glow-white)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"></animate></circle>
+                <circle cx="270" cy="30" r="4" fill="#ffffff" filter="url(#glow-white)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.2s" repeatCount="indefinite"></animate></circle>
+                <circle cx="390" cy="30" r="4" fill="#ffffff" filter="url(#glow-white)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.4s" repeatCount="indefinite"></animate></circle>
+                <circle cx="510" cy="30" r="4" fill="#ffffff" filter="url(#glow-white)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.6s" repeatCount="indefinite"></animate></circle>
+                <circle cx="630" cy="30" r="4" fill="#ffffff" filter="url(#glow-white)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.8s" repeatCount="indefinite"></animate></circle>
+                <circle cx="750" cy="30" r="4" fill="#ffffff" filter="url(#glow-white)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"></animate></circle>
+
+                <path d="M450 300 C 450 200, 300 120, 150 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" style="stroke-dasharray: 600; stroke-dashoffset: 600; opacity: 0.6;"><animate attributeName="stroke-dashoffset" values="600;0;600" dur="3s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animate></path>
+                <path d="M450 300 C 450 210, 360 130, 270 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" style="stroke-dasharray: 520; stroke-dashoffset: 520; opacity: 0.6;"><animate attributeName="stroke-dashoffset" values="520;0;520" dur="3s" begin="0.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animate></path>
+                <path d="M450 300 C 450 150, 420 80, 390 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" style="stroke-dasharray: 450; stroke-dashoffset: 450; opacity: 0.6;"><animate attributeName="stroke-dashoffset" values="450;0;450" dur="3s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animate></path>
+                <path d="M450 300 C 450 150, 480 80, 510 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" style="stroke-dasharray: 450; stroke-dashoffset: 450; opacity: 0.6;"><animate attributeName="stroke-dashoffset" values="450;0;450" dur="3s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animate></path>
+                <path d="M450 300 C 450 210, 540 130, 630 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" style="stroke-dasharray: 520; stroke-dashoffset: 520; opacity: 0.6;"><animate attributeName="stroke-dashoffset" values="520;0;520" dur="3s" begin="0.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animate></path>
+                <path d="M450 300 C 450 200, 600 120, 750 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" style="stroke-dasharray: 600; stroke-dashoffset: 600; opacity: 0.6;"><animate attributeName="stroke-dashoffset" values="600;0;600" dur="3s" begin="1s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animate></path>
+              </svg>
+
+              <!-- Central Cortex Logo -->
+              <div class="absolute bottom-2 left-1/2 -translate-x-1/2">
+                <span class="inline-flex h-14 w-14 items-center justify-center bg-white/10 ring-2 ring-white/30 rounded-lg" style="box-shadow: 0 0 30px rgba(255,255,255,0.3), 0 0 60px rgba(255,255,255,0.15);">
+                  <img src="cortex-logo.png" alt="Cortex" class="w-8 h-8 object-contain">
+                </span>
+              </div>
+            </div>
+
+            <!-- Feature Tags -->
+            <div class="flex items-center justify-center gap-3 flex-wrap mt-8 reveal-on-scroll">
+              <div class="inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/50"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg>
+                <span class="font-medium text-white/70 text-sm font-geist">Instant sync</span>
+              </div>
+              <div class="hidden sm:block w-16 h-px border-t border-dashed border-white/20"></div>
+              <div class="inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/50"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                <span class="font-medium text-white/70 text-sm font-geist">Non-custodial</span>
+              </div>
+              <div class="hidden sm:block w-16 h-px border-t border-dashed border-white/20"></div>
+              <div class="inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/50"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
+                <span class="font-medium text-white/70 text-sm font-geist">Real-time</span>
+              </div>
+              <div class="hidden sm:block w-16 h-px border-t border-dashed border-white/20"></div>
+              <div class="inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/50"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                <span class="font-medium text-white/70 text-sm font-geist">One-click setup</span>
+              </div>
+            </div>
+          </div>
+
           <div class="mb-16 relative">
             <div class="absolute -top-12 -left-12 w-32 h-32 bg-[#ffffff]/10 rounded-full blur-3xl" aria-hidden="true"></div>
 
